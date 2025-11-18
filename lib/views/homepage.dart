@@ -3,6 +3,7 @@ import '../models/store_model.dart';
 import '../services/store_services.dart';
 import 'detailpage.dart';
 import 'cart_page.dart';
+import 'profile.dart';
 
 class HomePage extends StatefulWidget {
   static const routeName = '/home';
@@ -82,7 +83,9 @@ class _HomePageState extends State<HomePage> {
           ),
           IconButton(
             onPressed: () {
-              Navigator.of(context).pushNamed('/profile');
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const ProfilePage()),
+              );
             },
             icon: const Icon(Icons.person),
             tooltip: 'Profile',

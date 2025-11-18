@@ -38,13 +38,6 @@ class _CartPageState extends State<CartPage> {
     await _load();
   }
 
-  Future<void> _checkout() async {
-    // simple demo: clear cart
-    await _cart.clearCart();
-    await _load();
-    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Checkout berhasil (demo)')));
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,10 +95,6 @@ class _CartPageState extends State<CartPage> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text('Total: Rp ${total.toStringAsFixed(2)}', style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                              ElevatedButton(
-                                onPressed: _checkout,
-                                child: const Text('Checkout'),
-                              )
                             ],
                           ),
                         );
